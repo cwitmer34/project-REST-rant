@@ -1,4 +1,28 @@
+html,
+body {
+  margin: auto;
+  padding: 0;
+}
+
 h1 {
   text-align: center;
   color: cornflowerblue;
 }
+
+.home-pic,
+.error404-pic {
+  width: 50vw;
+}
+
+.card {
+  width: 300px;
+  margin: 0.5rem;
+}
+
+.row {
+  justify-content: center;
+}
+
+/* .text-center {
+  text-align: center;
+} */
