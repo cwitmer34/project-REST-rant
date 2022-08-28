@@ -5,8 +5,10 @@ const PORT = process.env.PORT;
 const express = require("express");
 const app = express();
 
+app.use("/places", require("./controllers/places"));
+
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.send("<h1>Hello World</h1>");
 });
 
 app.get("*", (req, res) => {
@@ -14,5 +16,3 @@ app.get("*", (req, res) => {
 });
 
 app.listen(PORT, console.log(`App is listening on ${PORT}`));
-
-console.log("balls");
