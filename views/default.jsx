@@ -10,6 +10,15 @@ function Def(html) {
       </head>
       <body>
         {html.children}
+        <footer>
+          <p>Contact me:</p>
+          <div className="img-container">
+            <a href="https://github.com/cwitmer34"><img src="/images/github.png" alt="My github link" id='github'/></a>
+            <a href="https://twitter.com/cahnourf"><img src="/images/twitter.png" alt="My twitter link" id='twitter'/></a>
+            <a href="https://www.linkedin.com/in/connor-witmer-b649ab203/"><img src="/images/linkedin.png" alt="My linkedin link" id='linkedin' /></a>
+            <a href="https://www.instagram.com/connor.witmer/"><img src="/images/instagram.png" alt="My instagram link" id='instagram'/></a>
+          </div>
+        </footer>
       </body>
     </html>
   )
