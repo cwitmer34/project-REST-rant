@@ -10,6 +10,12 @@ router.get("/:id", (req, res) => {
   res.send("Hello");
 });
 
+// Post /places
+router.post("/", (req, res) => {
+  console.log(req.body);
+  res.send("POST /places");
+});
+
 // Get /places
 router.get("/", (req, res) => {
   let places = [
