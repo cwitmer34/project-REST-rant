@@ -1,5 +1,15 @@
 const router = require("express").Router();
 
+// NEW
+router.get("/new", (req, res) => {
+  res.render("places/new");
+});
+
+// Get place id
+router.get("/:id", (req, res) => {
+  res.send("Hello");
+});
+
 // Get /places
 router.get("/", (req, res) => {
   let places = [
