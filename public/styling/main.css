@@ -60,3 +60,16 @@ footer #instagram {
   margin-left: 5px;
   width: 45px;
 }
+
+nav {
+  font-size: 1.5em;
+  display: block;
+  text-align: center;
+}
+
+#home,
+#places,
+#add {
+  display: inline-block;
+  margin: 1em;
+}

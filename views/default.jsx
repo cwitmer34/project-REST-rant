@@ -9,6 +9,11 @@ function Def(html) {
         <link rel="stylesheet" href="/styling/main.css" />
       </head>
       <body>
+        <nav>
+          <a href="/"><div id="home">Home</div></a>
+          <a href="/places"><div id="places">Places</div></a>
+          <a href="/places/new"><div id="add">Add Place</div></a>
+        </nav>
         {html.children}
         <footer>
           <p>Contact me:</p>
