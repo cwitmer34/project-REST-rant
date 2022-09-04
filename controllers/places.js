@@ -8,7 +8,14 @@ router.get("/new", (req, res) => {
 
 // Get place id
 router.get("/:id", (req, res) => {
-  res.send("Hello");
+  let id = Number(req.params.id);
+  if (isNaN(id)) {
+    res.render("error404");
+  } else if (!places[id]) {
+    res.render("error404");
+  } else {
+    res.render("places/show", { place: places[id] });
+  }
 });
 
 // Post /places
