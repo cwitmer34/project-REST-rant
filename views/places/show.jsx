@@ -8,6 +8,7 @@ function show(data) {
         <div className="location">
           <h1 className='name'>{data.place.name}</h1>
           <img src={data.place.image} alt="Cat Cafe Pic" width={'100%'}/>
+          <h3>Located in {data.place.city}, {data.place.state}</h3>
         </div>
         <div className="info">
           <div>
@@ -16,7 +17,19 @@ function show(data) {
           </div>
           <div>
             <h2>Description</h2>
-            <p>Located in {data.place.city}, {data.place.state} and serving {data.place.cuisines}</p>
+            <h3>{data.place.showEstablished()}</h3>
+            <h4>Serving {data.place.cuisines}</h4>
+            <div className="modify-page">
+              <a href={`/places/${data.id}/edit`} className='btn btn-warning'>
+                Edit
+              </a>
+              <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
+                <button type="submit" className="btn btn-danger">
+                  Delete
+                </button>
+              </form> 
+
+            </div>
           </div>
         </div>
         <div>
@@ -24,17 +37,7 @@ function show(data) {
             <p>No comments yet!</p>
         </div>
       </main>
-      <div className="modify-page">
-        <a href={`/places/${data.id}/edit`} className='btn btn-warning'>
-          Edit
-        </a>
-        <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
-          <button type="submit" className="btn btn-danger">
-            Delete
-          </button>
-        </form> 
 
-      </div>
     </Def>
     )
 }
