@@ -106,7 +106,15 @@ router.post("/:id/rant", (req, res) => {
 });
 
 router.delete("/:id/rant/:rantId", (req, res) => {
-  res.send("GET /places/:id/rant/:rantId stub");
+  console.log(req.params.rantId);
+  db.Place.findByIdAndDelete(req.params.rantId)
+    .then(() => {
+      res.redirect(`/places/${req.params.id}`);
+    })
+    .catch((err) => {
+      console.log("error", err);
+      res.render("error404");
+    });
 });
 
 module.exports = router;

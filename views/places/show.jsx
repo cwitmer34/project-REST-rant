@@ -25,6 +25,9 @@ function show(data) {
           <h4>
             Rating: {c.stars}
           </h4>
+          <form action={`/places/${data.place.id}/rant/${c.id}?_method=DELETE`} method="POST">
+            <input type="submit" className='btn btn-danger' value={"Delete Comment"} />
+          </form>
         </div>
       )
     })
@@ -60,8 +63,6 @@ function show(data) {
           <h3>Located in {data.place.city}, {data.place.state}</h3>
           <div className="info">
             <div>
-              <h2>Rating</h2>
-              <p>Not Rated</p>
             </div>
             <div>
               <h2>Description</h2>
