@@ -1,4 +1,5 @@
 const React = require('react')
+const { Place } = require('../../models')
 const Def = require('../default')
 
 function show(data) {
@@ -59,9 +60,32 @@ function show(data) {
             </div>
           </div>
         </div>
-        <div>
+        <div className='border border-primary rounded p-3'>
           <h2>Comments</h2>
           {comments}
+          <div className="form-container border border-primary rounded p-3 m-3">
+            <h3>Add Your Own</h3>
+            <form method='POST' action={`/places/${data.place.id}/rant`}>
+              <div className="form-group">
+                <label htmlFor="author">Author Name</label>
+                <input type="text" className="form-control" name='author' id='author'/>
+              </div>
+              <div className="form-group">
+                <label htmlFor="content">Comment</label>
+                <textarea name="content" id="content" className='form-control'></textarea>
+              </div>
+              <div className="form-group">
+                <label htmlFor="stars">Rating</label>
+                <input type="number" step={0.5} id='stars' name='stars' className='form-control'/>
+              </div>
+              <div className="form-group">
+                <label htmlFor="rant">Rant?</label>
+                <br />
+                <input type="checkbox" defaultChecked name='rant' id='rant'/>
+              </div>
+              <input className='btn btn-primary' type="submit" value={"Add Comment"}/>
+            </form>
+          </div>
         </div>
       </main>
 
