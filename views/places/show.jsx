@@ -29,12 +29,33 @@ function show(data) {
       )
     })
   }
+  
+  let rating = (
+    <h3 className="inactive">
+      Not yet rated, be the first!
+    </h3>
+  )
+
+  if (data.place.comments.length) {
+    let sumRatings = data.place.comments.reduce((tot, c) =>{
+      return tot + c.stars
+    }, 0)
+    let averageRating = Math.round(sumRatings / data.place.comments.length)
+    let stars = ''
+    for (let i = 0; i < averageRating; i++) {
+      stars += '⭐'
+    }
+    rating = (
+      <h3>{stars}</h3>
+    )
+  }
 
   return (
     <Def>
       <main>
         <div className="location">
           <h1 className='name'>{data.place.name}</h1>
+          <h2>{rating}</h2>
           <img src={data.place.image} alt="Cat Cafe Pic" width={'100%'}/>
           <h3>Located in {data.place.city}, {data.place.state}</h3>
           <div className="info">
@@ -47,10 +68,10 @@ function show(data) {
               <h3>{data.place.showEstablished()}</h3>
               <h4>Serving {data.place.cuisines}</h4>
               <div className="modify-page">
-                <a href={`/places/${data.id}/edit`} className='btn btn-warning'>
+                <a href={`/places/${data.place.id}/edit`} className='btn btn-warning'>
                   Edit
                 </a>
-                <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
+                <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}> 
                   <button type="submit" className="btn btn-danger">
                     Delete
                   </button>

@@ -38,9 +38,8 @@ function new_form(data) {
           </div>
           <div className="form-group">
             <label htmlFor="founded">Founded Year</label>
-            <input className="form-control" id="founded" name="founded" placeholder={new Date().getFullYear()} min={1673} max={new Date().getFullYear()} required/>
+            <input className="form-control" id="founded" name="founded" placeholder={new Date().getFullYear()}required/>
           </div>
-
           <input className='btn btn-primary' type="submit" value={"Add Place"}/>
         </form>
       </main>

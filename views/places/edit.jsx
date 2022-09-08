@@ -13,7 +13,7 @@ function edit_form(data) {
           </div>
           <div className='form-group'>
             <label htmlFor="image">Image of Location</label>
-            <input className='form-control' type="url" name='image' id='image' value={data.place.image} required/>
+            <input className='form-control' type="url" name='image' id='image' value={data.place.image} />
           </div>
           <div className='form-group'>
             <label htmlFor="cuisines">Cuisines</label>
@@ -26,6 +26,10 @@ function edit_form(data) {
           <div className='form-group'>
             <label htmlFor="state">State of Location</label>
             <input className='form-control' type="text" name='state' id='state' value={data.place.state} required/>
+          </div>
+          <div className="form-group">
+            <label htmlFor="founded">Founded Year</label>
+            <input className="form-control" id="founded" name="founded" placeholder={new Date().getFullYear()}required/>
           </div>
           <input className='btn btn-primary' type="submit" value={"Edit Page"}/>
         </form>
