@@ -108,7 +108,7 @@ router.post("/:id/rant", (req, res) => {
 router.delete("/:id/rant/:rantId", (req, res) => {
   console.log(req.params.rantId);
   db.Place.findByIdAndDelete(req.params.rantId)
-    .then(() => {
+    .then((place) => {
       res.redirect(`/places/${req.params.id}`);
     })
     .catch((err) => {
